@@ -1,79 +1,22 @@
-body{
-  margin:0;
-  font-family:Arial;
-  background:#f2f2f2;
-}
-
-.container{
-  text-align:center;
-  padding:60px 20px;
-}
-
-.btn{
-  display:inline-block;
-  padding:12px 25px;
-  background:#ff9800;
-  color:#000;
-  text-decoration:none;
-  border-radius:25px;
-  font-weight:bold;
-}
-
-.center{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
-
-.card{
-  background:#fff;
-  padding:25px;
-  width:300px;
-  border-radius:10px;
-  text-align:center;
-}
-
-input{
-  width:100%;
-  padding:10px;
-  margin:8px 0;
-}
-
-button{
-  padding:10px 20px;
-  margin-top:10px;
-}
-
-.quiz-bg{
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.quiz-box{
-  background:rgba(0,0,0,0.5);
-  color:#fff;
-  padding:20px;
-  width:90%;
-  max-width:350px;
-  border-radius:15px;
-  text-align:center;
-}
-
-#timer{
-  font-size:22px;
-  margin-bottom:10px;
-}
-
-#options button{
-  width:100%;
-  padding:10px;
-  margin:5px 0;
-  border:none;
-  border-radius:6px;
-  background:#ff9800;
-  font-weight:bold;
-}
+body{margin:0;font-family:Arial;background:#f2f2f2}
+.hero{background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;padding:70px 20px;text-align:center}
+.hero-box{max-width:550px;margin:auto}
+.tagline{font-size:18px;margin:15px 0}
+.prize span{font-size:32px;color:#ffeb3b}
+.section{padding:40px 20px;max-width:700px;margin:auto}
+.section.light{background:#f7f7f7}
+.btn{display:inline-block;padding:12px 25px;background:#ff9800;
+color:#000;text-decoration:none;border-radius:25px;font-weight:bold}
+.btn.big{display:block;text-align:center;font-size:18px;margin-top:20px}
+.center{display:flex;justify-content:center;align-items:center;height:100vh}
+.card{background:#fff;padding:25px;width:320px;border-radius:10px;text-align:center}
+input{width:100%;padding:10px;margin:8px 0}
+.quiz-bg{background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+min-height:100vh;display:flex;justify-content:center;align-items:center}
+.quiz-box{background:rgba(0,0,0,0.5);color:#fff;padding:20px;
+width:90%;max-width:400px;border-radius:15px;text-align:center}
+.option-btn{width:100%;padding:10px;margin:6px 0;border:none;
+border-radius:6px;background:#ff9800;font-weight:bold}
+.site-footer{text-align:center;padding:15px;background:#222;color:#fff}
+.site-footer a{color:#ffcc80;text-decoration:none}
