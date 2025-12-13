@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Student Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
 </head>
-<body style="text-align:center; font-family:Arial">
+<body style="text-align:center;font-family:Arial">
 
-  <h2>📝 Mock Test Login</h2>
+<h2>Student Login</h2>
 
-  <input id="name" placeholder="Enter your name"><br><br>
-  <input id="email" placeholder="Enter your email"><br><br>
+<input id="name" placeholder="Full Name"><br><br>
+<input id="email" placeholder="Email"><br><br>
 
-  <button onclick="login()">Start Test</button>
+<label>
+<input type="checkbox" id="agree"> I agree to Terms & Conditions
+</label><br><br>
 
-  <script>
-    function login() {
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
+<button onclick="login()">Start Quiz</button>
 
-      if (!name || !email) {
-        alert("Please fill all details");
-        return;
-      }
+<script>
+function login(){
+  if(!name.value || !email.value) return alert("Fill all details");
+  if(!agree.checked) return alert("Accept T&C");
 
-      localStorage.setItem("studentName", name);
-      localStorage.setItem("studentEmail", email);
-
-      window.location.href = "quiz.html";
-    }
-  </script>
+  localStorage.setItem("name",name.value);
+  localStorage.setItem("email",email.value);
+  location.href="quiz.html";
+}
+</script>
 
 </body>
 </html>
