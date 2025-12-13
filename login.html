@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="text-align:center; font-family:Arial">
+
+  <h2>📝 Mock Test Login</h2>
+
+  <input id="name" placeholder="Enter your name"><br><br>
+  <input id="email" placeholder="Enter your email"><br><br>
+
+  <button onclick="login()">Start Test</button>
+
+  <script>
+    function login() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+
+      if (!name || !email) {
+        alert("Please fill all details");
+        return;
+      }
+
+      localStorage.setItem("studentName", name);
+      localStorage.setItem("studentEmail", email);
+
+      window.location.href = "quiz.html";
+    }
+  </script>
+
+</body>
+</html>
