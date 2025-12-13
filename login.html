@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="styles.css">
+<title>Exam Login</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="box">
-    <h2>Student Login</h2>
-    <input id="name" placeholder="Full Name"><br><br>
-    <input id="dob" type="date"><br><br>
-    <button onclick="login()">Start Quiz</button>
-  </div>
+<div class="wrapper">
+<div class="card">
+<h1>🎫 Exam Login</h1>
+
+<input id="name" placeholder="Full Name">
+<input id="dob" type="date">
+<input id="email" placeholder="Email ID">
+
+<div class="center">
+<button class="btn" onclick="login()">Start Exam</button>
+</div>
+
+</div>
+</div>
 
 <script>
 function login(){
-  const n = document.getElementById("name").value;
-  const d = document.getElementById("dob").value;
-  if(!n || !d){ alert("Fill all details"); return; }
-  localStorage.setItem("name",n);
-  localStorage.setItem("dob",d);
-  window.location.href="quiz.html";
+  let n=name.value,d=dob.value,e=email.value;
+  if(!n||!d||!e){alert("Fill all details");return;}
+  if(localStorage.getItem("attempted")){alert("Attempt already used");return;}
+  localStorage.setItem("student",JSON.stringify({n,d,e}));
+  window.location="exam.html";
 }
 </script>
 </body>
