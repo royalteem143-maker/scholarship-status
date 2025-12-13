@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html>
-<body style="text-align:center">
+<head>
+  <title>Result</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="center">
 
-<h2>Result</h2>
-<p id="r"></p>
+<div class="card">
+  <h2>Result</h2>
+  <p id="res"></p>
+  <a class="btn" href="./index.html">Home</a>
+</div>
 
 <script>
-r.innerText=
-localStorage.getItem("name")+
-" | Score: "+
-localStorage.getItem("score");
+document.getElementById("res").innerText =
+localStorage.getItem("name")+" | Score: "+localStorage.getItem("score");
 </script>
 
 </body>
