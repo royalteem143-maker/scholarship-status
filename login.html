@@ -11,6 +11,7 @@
   <h2>Student Login</h2>
 
   <input id="name" placeholder="Full Name">
+  <input type="date" id="dob">
   <input id="email" placeholder="Email">
 
   <label style="font-size:14px;">
@@ -23,13 +24,21 @@
 <script>
 function login(){
   const name = document.getElementById("name").value.trim();
+  const dob = document.getElementById("dob").value;
   const email = document.getElementById("email").value.trim();
   const agree = document.getElementById("agree").checked;
 
-  if(!name || !email){ alert("Fill all details"); return; }
-  if(!agree){ alert("Accept terms"); return; }
+  if(!name || !dob || !email){
+    alert("Fill all details");
+    return;
+  }
+  if(!agree){
+    alert("Accept terms");
+    return;
+  }
 
   localStorage.setItem("name", name);
+  localStorage.setItem("dob", dob);
   localStorage.setItem("email", email);
 
   window.location.href = "quiz.html";
