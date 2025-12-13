@@ -1,90 +1,42 @@
-// 🔐 Login check
-const name = localStorage.getItem("studentName");
-if (!name) {
-  window.location.href = "login.html";
-}
+if(!localStorage.getItem("name")) location.href="login.html";
 
-// 📚 Questions
-const questions = [
-  {
-    q: "HTML ka full form kya hai?",
-    options: [
-      "Hyper Text Markup Language",
-      "High Text Machine Language",
-      "Hyperlinks Text Mark Language",
-      "Home Tool Markup Language"
-    ],
-    correct: 0
-  },
-  {
-    q: "CSS ka use kisliye hota hai?",
-    options: [
-      "Database ke liye",
-      "Logic likhne ke liye",
-      "Styling ke liye",
-      "Server ke liye"
-    ],
-    correct: 2
-  }
+const questions=[
+ {q:"भारत की राजधानी?",o:["दिल्ली","मुंबई","कोलकाता","चेन्नई"],a:0},
+ {q:"2+2=?",o:["2","3","4","5"],a:2}
 ];
 
-let current = 0;
-let score = 0;
-let timeLeft = 10;
-let timer;
+let i=0,score=0,time=10,t;
 
-// ⏱️ Timer start
-function startTimer() {
-  timeLeft = 10;
-  document.getElementById("timer").innerText = "⏳ Time: " + timeLeft;
-
-  timer = setInterval(() => {
-    timeLeft--;
-    document.getElementById("timer").innerText = "⏳ Time: " + timeLeft;
-
-    if (timeLeft === 0) {
-      clearInterval(timer);
-      nextQuestion();
-    }
-  }, 1000);
+function show(){
+ let q=questions[i];
+ box.innerHTML="<h3>"+q.q+"</h3>"+q.o.map((x,j)=>
+ `<button onclick="ans(${j})">${x}</button><br>`).join("");
+ start();
 }
 
-// ❓ Show question
-function showQuestion() {
-  const q = questions[current];
-  let html = `<h3>${q.q}</h3>`;
-
-  q.options.forEach((opt, i) => {
-    html += `
-      <label>
-        <input type="radio" name="option" value="${i}">
-        ${opt}
-      </label><br>
-    `;
-  });
-
-  document.getElementById("quizBox").innerHTML = html;
-  startTimer();
+function start(){
+ time=10;
+ timer.textContent=time;
+ t=setInterval(()=>{
+  time--;
+  timer.textContent=time;
+  if(time<0) next();
+ },1000);
 }
 
-// ▶️ Next question
-function nextQuestion() {
-  clearInterval(timer);
-
-  const selected = document.querySelector('input[name="option"]:checked');
-  if (selected && parseInt(selected.value) === questions[current].correct) {
-    score++;
-  }
-
-  current++;
-
-  if (current < questions.length) {
-    showQuestion();
-  } else {
-    localStorage.setItem("score", score);
-    window.location.href = "result.html";
-  }
+function ans(x){
+ if(x===questions[i].a) score++;
+ next();
 }
 
-// 🚀 Start quiz
-showQuestion();
+function next(){
+ clearInterval(t);
+ i++;
+ if(i<questions.length) show();
+ else{
+  localStorage.setItem("score",score);
+  location.href="result.html";
+ }
+}
+
+show();
