@@ -1,50 +1,42 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: white;
+const SHEET_URL="PASTE_YOUR_GOOGLE_SHEET_CSV_LINK";
+const ENTRY_FEE=100;
+const MAX_STUDENTS=10000;
+const MAX_FIRST_PRIZE=100000;
+
+function prize(rank,total){
+ if(rank===1){
+  return Math.min((total/MAX_STUDENTS)*MAX_FIRST_PRIZE,MAX_FIRST_PRIZE).toFixed(0);
+ }
+ if(rank===2) return "Dynamic";
+ if(rank===3) return "Dynamic";
+ return "-";
 }
 
-.container {
-  max-width: 400px;
-  margin: auto;
-  padding: 40px 20px;
-  text-align: center;
+function load(){
+ fetch(SHEET_URL).then(r=>r.text()).then(csv=>{
+  let rows=csv.split("\n").slice(1);
+  let users={};
+
+  rows.forEach(r=>{
+   let c=r.split(",");
+   let email=c[1],name=c[0],s=parseInt(c[3]);
+   if(!users[email]) users[email]={name,total:0};
+   users[email].total+=s;
+  });
+
+  let arr=Object.values(users).sort((a,b)=>b.total-a.total);
+  leaderboard.innerHTML="<tr><th>Rank</th><th>Name</th><th>Score</th><th>Prize</th></tr>";
+
+  arr.forEach((u,i)=>{
+   leaderboard.innerHTML+=`<tr>
+    <td>${i+1}</td>
+    <td>${u.name}</td>
+    <td>${u.total}</td>
+    <td>₹${prize(i+1,arr.length)}</td>
+   </tr>`;
+  });
+ });
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
-}
-
-p {
-  opacity: 0.9;
-}
-
-.btn {
-  display: inline-block;
-  margin: 25px 0;
-  padding: 15px 30px;
-  background: #ff9800;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 30px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #ffc107;
-  transform: scale(1.05);
-}
-
-table {
-  width: 100%;
-  margin-top: 20px;
-  border-collapse: collapse;
-}
-
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-}
+load();
+setInterval(load,30000);
