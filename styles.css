@@ -1,96 +1,79 @@
-/* ===== Global ===== */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f2f2f2;
 }
 
-/* ===== Landing Page ===== */
-.container {
-  max-width: 450px;
-  margin: auto;
-  padding: 30px 15px;
-  text-align: center;
+.container{
+  text-align:center;
+  padding:60px 20px;
 }
 
-h1, h2 {
-  margin-bottom: 10px;
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  background:#ff9800;
+  color:#000;
+  text-decoration:none;
+  border-radius:25px;
+  font-weight:bold;
 }
 
-.btn {
-  display: inline-block;
-  padding: 15px 30px;
-  background: #ff9800;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 30px;
-  margin: 20px 0;
+.center{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
 }
 
-/* ===== Leaderboard ===== */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
+.card{
+  background:#fff;
+  padding:25px;
+  width:300px;
+  border-radius:10px;
+  text-align:center;
 }
 
-th, td {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+input{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
 }
 
-/* ===== Quiz Page ===== */
-.quiz-bg {
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+button{
+  padding:10px 20px;
+  margin-top:10px;
 }
 
-.quiz-box {
-  background: rgba(0,0,0,0.45);
-  color: #fff;
-  padding: 25px;
-  width: 90%;
-  max-width: 420px;
-  border-radius: 15px;
-  text-align: center;
+.quiz-bg{
+  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-.timer {
-  font-size: 22px;
-  margin: 10px 0;
-  color: #ffeb3b;
+.quiz-box{
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  padding:20px;
+  width:90%;
+  max-width:350px;
+  border-radius:15px;
+  text-align:center;
 }
 
-#question {
-  font-size: 18px;
-  margin-bottom: 15px;
+#timer{
+  font-size:22px;
+  margin-bottom:10px;
 }
 
-.option-btn {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 8px;
-  background: #ff9800;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* ===== Footer ===== */
-.site-footer {
-  margin-top: 40px;
-  padding: 15px;
-  text-align: center;
-  font-size: 14px;
-  background: rgba(0,0,0,0.3);
-}
-
-.site-footer a {
-  color: #ffcc80;
-  text-decoration: none;
+#options button{
+  width:100%;
+  padding:10px;
+  margin:5px 0;
+  border:none;
+  border-radius:6px;
+  background:#ff9800;
+  font-weight:bold;
 }
