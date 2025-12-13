@@ -2,48 +2,25 @@
 <html>
 <head>
   <title>Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="card">
-  <h2>Student Login</h2>
-
-  <input id="name" placeholder="Full Name">
-  <input type="date" id="dob">
-  <input id="email" placeholder="Email">
-
-  <label style="font-size:14px;">
-    <input type="checkbox" id="agree"> I agree to Terms
-  </label>
-
-  <button onclick="login()">Start Quiz</button>
-</div>
+  <div class="box">
+    <h2>Student Login</h2>
+    <input id="name" placeholder="Full Name"><br><br>
+    <input id="dob" type="date"><br><br>
+    <button onclick="login()">Start Quiz</button>
+  </div>
 
 <script>
 function login(){
-  const name = document.getElementById("name").value.trim();
-  const dob = document.getElementById("dob").value;
-  const email = document.getElementById("email").value.trim();
-  const agree = document.getElementById("agree").checked;
-
-  if(!name || !dob || !email){
-    alert("Fill all details");
-    return;
-  }
-  if(!agree){
-    alert("Accept terms");
-    return;
-  }
-
-  localStorage.setItem("name", name);
-  localStorage.setItem("dob", dob);
-  localStorage.setItem("email", email);
-
-  window.location.href = "quiz.html";
+  const n = document.getElementById("name").value;
+  const d = document.getElementById("dob").value;
+  if(!n || !d){ alert("Fill all details"); return; }
+  localStorage.setItem("name",n);
+  localStorage.setItem("dob",d);
+  window.location.href="quiz.html";
 }
 </script>
-
 </body>
 </html>
