@@ -11,7 +11,7 @@ body {
   color: #ffffff;
 }
 
-/* Center container */
+/* MAIN CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
@@ -19,38 +19,38 @@ body {
   text-align: center;
 }
 
-/* Heading */
+/* HEADING */
 h1 {
-  font-size: 42px;
+  font-size: 40px;
   margin-bottom: 20px;
   color: #ffd700;
 }
 
-/* Sub text */
+/* SUBTEXT */
 .subtitle {
   font-size: 18px;
-  margin-bottom: 30px;
   line-height: 1.6;
+  margin-bottom: 25px;
   color: #e0e0e0;
 }
 
-/* Prize highlight */
+/* PRIZE HIGHLIGHT */
 .prize {
   font-size: 24px;
   font-weight: bold;
-  color: #00ffcc;
+  color: #00ffd5;
   margin: 25px 0;
 }
 
-/* Button */
+/* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 30px;
-  padding: 15px 35px;
+  margin-top: 25px;
+  padding: 15px 40px;
   font-size: 20px;
   font-weight: bold;
   background: linear-gradient(90deg, #ff9800, #ff5722);
-  color: #fff;
+  color: #ffffff;
   border-radius: 40px;
   text-decoration: none;
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
@@ -61,18 +61,48 @@ h1 {
   transform: scale(1.08);
 }
 
-/* Sections */
+/* SECTIONS */
 .section {
-  margin-top: 60px;
-  text-align: left;
-  background: rgba(255,255,255,0.05);
+  margin-top: 50px;
+  background: rgba(255,255,255,0.06);
   padding: 30px;
   border-radius: 15px;
+  text-align: left;
 }
 
-/* Footer */
+.section h2 {
+  color: #00ffd5;
+  margin-bottom: 15px;
+}
+
+.section ul {
+  list-style: none;
+}
+
+.section ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* LINKS */
+.links {
+  margin-top: 15px;
+}
+
+.links a {
+  color: #00ffd5;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
 footer {
-  margin-top: 80px;
+  margin-top: 70px;
   font-size: 14px;
-  color: #ccc;
+  color: #cccccc;
 }
