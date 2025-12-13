@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Student Login</title>
+  <title>Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body class="center">
+<body>
 
 <div class="card">
   <h2>Student Login</h2>
@@ -14,12 +13,11 @@
   <input id="name" placeholder="Full Name">
   <input id="email" placeholder="Email">
 
-  <label>
-    <input type="checkbox" id="agree">
-    मैं नियम व शर्तों से सहमत हूँ
+  <label style="font-size:14px;">
+    <input type="checkbox" id="agree"> I agree to Terms
   </label>
 
-  <button type="button" onclick="login()">Start Quiz</button>
+  <button onclick="login()">Start Quiz</button>
 </div>
 
 <script>
@@ -28,20 +26,13 @@ function login(){
   const email = document.getElementById("email").value.trim();
   const agree = document.getElementById("agree").checked;
 
-  if(!name || !email){ alert("सभी जानकारी भरें"); return; }
-  if(!agree){ alert("Terms स्वीकार करें"); return; }
-
-  const today = new Date().toDateString();
-  if(localStorage.getItem("played_"+email) === today){
-    alert("आप आज का क्विज़ पहले ही खेल चुके हैं");
-    return;
-  }
+  if(!name || !email){ alert("Fill all details"); return; }
+  if(!agree){ alert("Accept terms"); return; }
 
   localStorage.setItem("name", name);
   localStorage.setItem("email", email);
-  localStorage.setItem("played_"+email, today);
 
-  window.location.href = "./quiz.html";
+  window.location.href = "quiz.html";
 }
 </script>
 
