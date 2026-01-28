@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://royalteem143-maker.github.io/scholarship-status/sitemap.xml
